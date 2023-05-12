@@ -8,3 +8,4 @@ data = response.json()
 # You can then interact with this data as a regular Python dictionary
 for post in data:
     print(post['title'])
+
