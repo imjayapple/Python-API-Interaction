@@ -24,3 +24,15 @@ def get_weather(city_name):
         return temperature, humidity, weather_desc
     else:
         return None
+
+# Capture user input, city name, and weather variable to capture get_weather(city_name)
+
+city_name = input("Enter city name : ")
+weather = get_weather(city_name)
+
+if weather:
+    print(f"Temperature : {weather[0]}")
+    print(f"Humidity : {weather[1]}")
+    print(f"Weather description : {weather[2]}")
+else:
+    print("City Not Found!")
