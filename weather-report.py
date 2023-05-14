@@ -12,3 +12,15 @@ def get_weather(city_name):
     })
 
     data = response.json()
+
+    # Extract the temperature, weather description from the data
+    if data.get("main") is not None:
+        main = data["main"]
+        temperature = main["temp"]
+        humidity = main["humidity"]
+
+        weather_desc = data["weather"][0]["description"]
+
+        return temperature, humidity, weather_desc
+    else:
+        return None
