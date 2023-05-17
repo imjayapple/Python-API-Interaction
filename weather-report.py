@@ -29,11 +29,18 @@ def get_weather(city_name):
 # Capture user input, city name, and weather variable to capture get_weather(city_name)
 
 city_name = input("Enter city name : ")
-weather = get_weather(city_name)
+temp_unit = input("Enter temperature unit (C/F) : ")
+
+if temp_unit.lower() == 'f':
+    temp_unit = 'imperial'
+else:
+    temp_unit = 'metric'
+
+weather = get_weather(city_name, temp_unit)
 
 if weather:
-    print(f"Temperature : {weather[0]}")
-    print(f"Humidity : {weather[1]}")
+    print(f"Temperature : {weather[0]} {'' if temp_unit == 'metric' else '°F'}")
+    print(f"Humidity : {weather[1]}%")
     print(f"Weather description : {weather[2]}")
 else:
     print("City Not Found!")
