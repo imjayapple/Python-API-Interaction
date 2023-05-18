@@ -1,4 +1,13 @@
 import requests
+import datetime
+
+# Convert the Unix timestamp to a more accessible format
+
+timestamp = 1621228800
+date = datetime.datetime.fromtimestamp(timestamp).strftime("%Y-%m-%d")
+
+print(f"The weather data for New York City on {date}:")
+
 
 # Set up the API endpoint and parameters
 api_key = "your_openweathermap_api_key"
