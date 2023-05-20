@@ -31,3 +31,12 @@ temperature = data["current"]["temp"]
 weather_desc = data["current"]["weather"][0]["description"]
 
 print(f"The temperature in New York City on May 17, 2021 was {temperature} degrees Celsius, and the weather was {weather_desc}.")
+
+# humidty gathering + windspeed & pressure
+humidity = data["current"]["humidity"]
+wind_speed = data["current"]["wind_speed"]
+pressure = data["current"]["pressure"]
+
+print(f"Humidity: {humidity}%")
+print(f"Wind Speed: {wind_speed} m/s")
+print(f"Atmospheric Pressure: {pressure} hPa")
