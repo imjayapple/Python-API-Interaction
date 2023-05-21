@@ -32,7 +32,7 @@ weather_desc = data["current"]["weather"][0]["description"]
 
 print(f"The temperature in New York City on May 17, 2021 was {temperature} degrees Celsius, and the weather was {weather_desc}.")
 
-# humidty gathering + windspeed & pressure
+# Humidty gathering + windspeed & pressure
 humidity = data["current"]["humidity"]
 wind_speed = data["current"]["wind_speed"]
 pressure = data["current"]["pressure"]
@@ -40,3 +40,15 @@ pressure = data["current"]["pressure"]
 print(f"Humidity: {humidity}%")
 print(f"Wind Speed: {wind_speed} m/s")
 print(f"Atmospheric Pressure: {pressure} hPa")
+
+# Error handling
+
+# Make the API request
+response = requests.get(endpoint, params=params)
+
+# Check if the request was successful
+if response.status_code == 200:
+    data = response.json()
+    # Extract and display weather data
+else:
+    print("An error occurred. Please try again later.")
