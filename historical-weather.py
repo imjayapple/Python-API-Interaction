@@ -52,3 +52,22 @@ if response.status_code == 200:
     # Extract and display weather data
 else:
     print("An error occurred. Please try again later.")
+
+# Prompt the user for input
+date_str = input("Enter the date (YYYY-MM-DD): ")
+location = input("Enter the location (latitude,longitude): ")
+
+# Convert the date string to a Unix timestamp
+date = datetime.datetime.strptime(date_str, "%Y-%m-%d")
+timestamp = int(date.timestamp())
+
+# Extract the latitude and longitude from the user input
+latitude, longitude = location.split(",")
+
+# Update the parameters
+params["lat"] = float(latitude)
+params["lon"] = float(longitude)
+params["dt"] = timestamp
+
+# Make the API request and display weather data
+# ...
